@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.5.0
+
+### Feature
+
+* add flask login user profile (e564345cdcba)
+
 ## v0.4.0
 
 ### Feature
