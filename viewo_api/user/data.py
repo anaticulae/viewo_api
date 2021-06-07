@@ -87,9 +87,9 @@ def user_fromid(userid: int) -> User:
     return loaded
 
 
-def userpath(userid: int) -> str:
+def userpath(userid: int, verify: bool = False) -> str:
     result = os.path.join(viewo_api.user.config.userpath(), userid)
-    if not os.path.exists(result):
+    if verify and not os.path.exists(result):
         return None
     return result
 

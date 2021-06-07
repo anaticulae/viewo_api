@@ -22,13 +22,10 @@ def create_user(password: str, userid: str = None):
     password = viewo_api.user.password.hashed(password)
     # generate new random user name
     if not userid:
-        random = utila.tmpname(viewo_api.user.config.USER_LENGTH)
-        while os.path.exists(viewo_api.user.data.userpath(random)):
-            random = utila.tmpname(viewo_api.user.config.USER_LENGTH)
-    else:
-        # do not generate random `userid`
-        random = userid
-    new = viewo_api.user.data.User(userid=random, password=password)
+        userid = utila.tmpname(viewo_api.user.config.USER_LENGTH)
+        while os.path.exists(viewo_api.user.data.userpath(userid, False)):
+            userid = utila.tmpname(viewo_api.user.config.USER_LENGTH)
+    new = viewo_api.user.data.User(userid=userid, password=password)
     # write to user database
     viewo_api.user.update.user_update(new)
     return new

@@ -49,6 +49,7 @@ def hashed(password: str) -> str:
     password = utila.secure_hash(
         password,
         salt=viewo_api.user.config.PASSWORD_SALT,
+        digits=64,
     )  # pylint:disable=E1101
     return password
 

@@ -14,7 +14,7 @@ import viewo_api.user.data
 
 
 def user_update(user: 'User'):
-    path = viewo_api.user.data.userpath(user.userid)
+    path = viewo_api.user.data.userpath(user.userid, verify=False)
     dumped = viewo_api.user.data.dump_user(user)
     # TODO: NOT THREAD SAFE
     utila.file_replace(path, dumped)
