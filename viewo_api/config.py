@@ -22,6 +22,7 @@ def todo():
 def ready():
     return flask.current_app.config['READY']
 
+
 configo.todo = todo
 configo.ready = ready
 configo.share = common
