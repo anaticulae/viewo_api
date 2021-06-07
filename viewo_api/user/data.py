@@ -11,6 +11,7 @@ import dataclasses
 import os
 import typing
 
+import flask_login
 import utila
 import yaml
 
@@ -102,3 +103,22 @@ def verify_password(userid: str, password: str) -> bool:
     except viewo_api.user.password.PasswordError:
         return False
     return password == user.password
+
+
+@dataclasses.dataclass
+class FlaskUser(flask_login.UserMixin):
+    identifier: str = None
+
+    def get_id(self):
+        return self.identifier
+
+    @property
+    def payed(self):
+        user = user_fromid(self.identifier)
+        if not user:
+            return 0
+        return user.payed
+
+    @property
+    def is_admin(self):
+        return False

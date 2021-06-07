@@ -13,6 +13,7 @@ from viewo_api.message import bad
 from viewo_api.message import internal
 from viewo_api.message import notfound
 from viewo_api.message import success
+from viewo_api.user.data import FlaskUser
 
 __version__ = '0.4.0'
 
