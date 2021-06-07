@@ -18,6 +18,8 @@ PASSWORD_RANDOM_LENGTH = 16
 PASSWORD_MIN_LENGTH = 8
 PASSWORD_MAX_LENGTH = 64
 
+USER_LENGTH = 16  # TODO: HOLY VALUE
+
 
 def userpath():
     result = os.path.join(viewo_api.config.common(), 'users')
