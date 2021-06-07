@@ -7,4 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+Flask==1.1.2
+
 utila>=2.36.0<3.0.0
