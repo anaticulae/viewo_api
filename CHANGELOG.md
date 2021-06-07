@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.5.1
+
+### Fix
+
+* fix user creation (2d1b061e9599)
+
 ## v0.5.0
 
 ### Feature

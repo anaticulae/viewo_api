@@ -15,6 +15,6 @@ from viewo_api.message import notfound
 from viewo_api.message import success
 from viewo_api.user.data import FlaskUser
 
-__version__ = '0.5.0'
+__version__ = '0.5.1'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
