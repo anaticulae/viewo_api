@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.4.0
+
+### Feature
+
+* add method to update user (e5efaad3be17)
+
 ## v0.3.0
 
 ### Feature
