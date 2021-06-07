@@ -14,6 +14,7 @@ import utila
 import viewo_api.user.config
 import viewo_api.user.data
 import viewo_api.user.password
+import viewo_api.user.update
 
 
 def create_user(password: str, userid: str = None):
@@ -29,5 +30,5 @@ def create_user(password: str, userid: str = None):
         random = userid
     new = viewo_api.user.data.User(userid=random, password=password)
     # write to user database
-    viewo_api.user.data.update_user(new)
+    viewo_api.user.update.user_update(new)
     return new

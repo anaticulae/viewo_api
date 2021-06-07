@@ -78,13 +78,6 @@ def dump_user(user: User) -> str:
     return dumped
 
 
-def update_user(user: User):
-    path = userpath(user.userid)
-    dumped = dump_user(user)
-    # TODO: NOT THREAD SAFE
-    utila.file_replace(path, dumped)
-
-
 def user_fromid(userid: int) -> User:
     path = userpath(userid)
     if not path:
