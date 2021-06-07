@@ -14,6 +14,6 @@ from viewo_api.message import internal
 from viewo_api.message import notfound
 from viewo_api.message import success
 
-__version__ = '0.2.0'
+__version__ = '0.3.0'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))

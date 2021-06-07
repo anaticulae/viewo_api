@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.3.0
+
+### Feature
+
+* add method to create user (3f884a5ec4c5)
+
 ## v0.2.0
 
 ### Feature
