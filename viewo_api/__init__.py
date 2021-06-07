@@ -6,7 +6,13 @@
 # use or distribution is an offensive act against international law and may
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
+
 import os
+
+from viewo_api.message import bad
+from viewo_api.message import internal
+from viewo_api.message import notfound
+from viewo_api.message import success
 
 __version__ = '0.0.0'
 
