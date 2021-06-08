@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.7.1
+
+### Feature
+
+* add verify flag, to signal invalid user (2da471b992bf)
+
 ## v0.7.0
 
 ### Feature
