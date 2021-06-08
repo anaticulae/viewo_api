@@ -20,6 +20,6 @@ from viewo_api.user.password import password_verify
 from viewo_api.user.state import login
 from viewo_api.user.state import logout
 
-__version__ = '0.6.0'
+__version__ = '0.6.1'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))

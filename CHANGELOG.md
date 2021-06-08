@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.6.1
+
+### Feature
+
+* restructure password code (121412bb3661)
+
 ## v0.6.0
 
 ### Feature
