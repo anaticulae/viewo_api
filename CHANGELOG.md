@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.6.0
+
+### Feature
+
+* add option login/logout (bbb37c3d88b7)
+
+### Documentation
+
+* fix interface documentation (5746ef0e2d40)
+
 ## v0.5.1
 
 ### Fix
