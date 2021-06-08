@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.7.2
+
+### Fix
+
+* signal correct update (576f36e56f36)
+
 ## v0.7.1
 
 ### Feature
