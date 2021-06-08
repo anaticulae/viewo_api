@@ -20,7 +20,7 @@ def user_update(user: 'User', verify=False) -> bool:
     dumped = viewo_api.user.data.dump_user(user)
     # TODO: NOT THREAD SAFE
     utila.file_replace(path, dumped)
-    return False
+    return True
 
 
 def user_append_document(userid: str, documentid: str):
