@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.7.3
+
+### Feature
+
+* add public password option (1be8244291db)
+
 ## v0.7.2
 
 ### Fix
