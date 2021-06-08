@@ -79,7 +79,7 @@ def dump_user(user: User) -> str:
     return dumped
 
 
-def user_fromid(userid: int) -> User:
+def user_fromid(userid: str) -> User:
     path = userpath(userid)
     if not path:
         return None
