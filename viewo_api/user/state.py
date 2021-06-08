@@ -13,11 +13,12 @@ import viewo_api.message
 import viewo_api.user.data
 
 
-def login(userid: str, password: str):
+def login(userid: str, password: str, publicpassword: bool = False):
     if not viewo_api.password_verify(userid, password):
         return False
     flask_login.login_user(viewo_api.FlaskUser(userid))
-    viewo_api.password_public_set(password)
+    if publicpassword:
+        viewo_api.password_public_set(password)
     viewo_api.message.flash('Login erfolgreich.')
     return True
 
