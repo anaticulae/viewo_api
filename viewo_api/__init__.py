@@ -14,6 +14,8 @@ from viewo_api.message import internal
 from viewo_api.message import notfound
 from viewo_api.message import success
 from viewo_api.user.data import FlaskUser
+from viewo_api.user.state import login
+from viewo_api.user.state import logout
 
 __version__ = '0.5.1'
 

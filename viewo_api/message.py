@@ -40,3 +40,6 @@ def internal(message: str):
         'message': message,
     })
     return result, 500
+
+def flash(message: str):
+    flask.flash(message)
