@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.7.0
+
+### Feature
+
+* add method to gather public user data (e4b8468af519)
+
 ## v0.6.1
 
 ### Feature
