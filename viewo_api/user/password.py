@@ -25,14 +25,14 @@ class PasswordTooLong(PasswordError):
     pass
 
 
-def valid(password: str) -> bool:
+def password_valid(password: str) -> bool:
     """\
-    >>> valid('short')
+    >>> password_valid('short')
     Traceback (most recent call last):
         ...
     viewo_api.user.password.PasswordTooShort
 
-    >>> valid('VeryLongPassword1337')
+    >>> password_valid('VeryLongPassword1337')
     True
     """
     if password is None:
@@ -46,7 +46,7 @@ def valid(password: str) -> bool:
 
 
 def hashed(password: str) -> str:
-    valid(password)
+    password_valid(password)
     password = utila.secure_hash(
         password,
         salt=viewo_api.user.config.PASSWORD_SALT,
@@ -74,3 +74,17 @@ def password_verify(userid: str, password: str) -> bool:
 def password_public_set(password: str):
     # TODO: CHECK FOR SECURITY ISSUES
     flask.globals.session['password_raw'] = password
+
+
+def username_valid(name) -> False:
+    """\
+    >>> username_valid('not a valid user')
+    False
+    >>> username_valid('012ABxxF012ABxxF')
+    True
+    >>> username_valid(' 12  xxx')
+    False
+    """
+    if not len(name) == viewo_api.user.config.USER_LENGTH:
+        return False
+    return all(item.isalnum() for item in name)

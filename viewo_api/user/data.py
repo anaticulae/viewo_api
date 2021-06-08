@@ -94,6 +94,23 @@ def userpath(userid: int, verify: bool = False) -> str:
     return result
 
 
+def userpublic_fromid(userid: str) -> dict:
+    """Returns public data which are not security/data privacy
+    relevant."""
+    user = user_fromid(userid)
+    if not user:
+        return None
+    result = {
+        'user': userid,
+        'documents': list(user.documents),
+    }
+    if user.email:
+        result['email'] = user.email
+    if user.payed is not None:
+        result['payed'] = user.payed
+    return result
+
+
 @dataclasses.dataclass
 class FlaskUser(flask_login.UserMixin):
     identifier: str = None
