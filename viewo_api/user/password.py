@@ -7,6 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import flask
 import utila
 
 import viewo_api.user.config
@@ -54,6 +55,22 @@ def hashed(password: str) -> str:
     return password
 
 
-def generate() -> str:
+def password_generate() -> str:
     random = utila.tmpname(viewo_api.user.config.PASSWORD_RANDOM_LENGTH)
     return random
+
+
+def password_verify(userid: str, password: str) -> bool:
+    user = viewo_api.user.data.user_fromid(userid)
+    if not user:
+        return False
+    try:
+        password = viewo_api.user.password.hashed(password)
+    except viewo_api.user.password.PasswordError:
+        return False
+    return password == user.password
+
+
+def password_public_set(password: str):
+    # TODO: CHECK FOR SECURITY ISSUES
+    flask.globals.session['password_raw'] = password

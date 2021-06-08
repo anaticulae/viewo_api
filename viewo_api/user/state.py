@@ -14,10 +14,10 @@ import viewo_api.user.data
 
 
 def login(userid: str, password: str):
-    if not viewo_api.user.data.verify_password(userid, password):
+    if not viewo_api.password_verify(userid, password):
         return False
     flask_login.login_user(viewo_api.FlaskUser(userid))
-    viewo_api.user.data.public_password_set(password)
+    viewo_api.password_public_set(password)
     viewo_api.message.flash('Login erfolgreich.')
     return True
 
@@ -25,5 +25,5 @@ def login(userid: str, password: str):
 def logout():
     flask_login.logout_user()
     # remove public password
-    viewo_api.user.data.public_password_set('')
+    viewo_api.password_public_set('')
     viewo_api.message.flash('Logout erfolgreich.')

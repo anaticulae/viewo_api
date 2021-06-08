@@ -11,7 +11,6 @@ import dataclasses
 import os
 import typing
 
-import flask
 import flask_login
 import utila
 import yaml
@@ -93,22 +92,6 @@ def userpath(userid: int, verify: bool = False) -> str:
     if verify and not os.path.exists(result):
         return None
     return result
-
-
-def verify_password(userid: str, password: str) -> bool:
-    user = user_fromid(userid)
-    if not user:
-        return False
-    try:
-        password = viewo_api.user.password.hashed(password)
-    except viewo_api.user.password.PasswordError:
-        return False
-    return password == user.password
-
-
-def public_password_set(password: str):
-    # TODO: CHECK FOR SECURITY ISSUES
-    flask.globals.session['password_raw'] = password
 
 
 @dataclasses.dataclass
