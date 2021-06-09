@@ -50,17 +50,14 @@ def user_raw(user: User) -> dict:
 
 def load_users(path: str) -> Users:
     assert os.path.exists(path), path
-
-    users = utila.file_list(path)
-    users = utila.files_sort(users)
-
-    loaded = [load_user(os.path.join(path, item)) for item in users]
+    files = utila.file_list(path)
+    files = utila.files_sort(files)
+    loaded = [load_user(os.path.join(path, item)) for item in files]
     return loaded
 
 
 def dump_users(users: Users, path: str):
     assert os.path.exists(path), path
-
     for user in users:
         dumped = dump_user(user)
         outpath = os.path.join(path, user.userid)
@@ -80,7 +77,7 @@ def dump_user(user: User) -> str:
 
 
 def user_fromid(userid: str) -> User:
-    path = userpath(userid)
+    path = userpath(userid, verify=True)
     if not path:
         return None
     loaded = load_user(path)
@@ -88,10 +85,16 @@ def user_fromid(userid: str) -> User:
 
 
 def userpath(userid: int, verify: bool = False) -> str:
-    result = os.path.join(viewo_api.user.config.userpath(), userid)
+    result = os.path.join(viewo_api.user.config.userspath(), userid)
     if verify and not os.path.exists(result):
         return None
     return result
+
+
+def userlist():
+    common_user = load_users(viewo_api.user.config.userspath())
+    raw = [user_raw(item) for item in common_user]
+    return raw
 
 
 def userpublic_fromid(userid: str) -> dict:

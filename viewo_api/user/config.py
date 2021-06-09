@@ -21,7 +21,7 @@ PASSWORD_MAX_LENGTH = 64
 USER_LENGTH = 16  # TODO: HOLY VALUE
 
 
-def userpath():
+def userspath():
     result = os.path.join(viewo_api.config.common(), 'users')
     os.makedirs(result, exist_ok=True)
     return result

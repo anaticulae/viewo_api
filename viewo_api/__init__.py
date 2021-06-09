@@ -13,6 +13,7 @@ from viewo_api.message import bad
 from viewo_api.message import internal
 from viewo_api.message import notfound
 from viewo_api.message import success
+from viewo_api.user.config import userspath
 from viewo_api.user.data import FlaskUser
 from viewo_api.user.password import password_generate
 from viewo_api.user.password import password_public_set
