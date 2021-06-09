@@ -9,6 +9,7 @@
 
 
 import viewo_api.user.data
+import viewo_api.user.serialize
 
 
 def test_dump_and_load_user():
@@ -18,14 +19,14 @@ def test_dump_and_load_user():
         payed=1000,
         userid='AHF2332LL',
     )
-    dumped = viewo_api.user.data.dump_user(user)
-    loaded = viewo_api.user.data.load_user(dumped)
+    dumped = viewo_api.user.serialize.dump_user(user)
+    loaded = viewo_api.user.serialize.load_user(dumped)
     assert loaded == user
 
 
 def test_dump_users(testdir):
     outpath = str(testdir)
-    assert not viewo_api.user.data.load_users(outpath)
+    assert not viewo_api.user.serialize.load_users(outpath)
     users = [  #nosec
         viewo_api.user.data.User(
             email='hans@dampf.eu',
@@ -45,6 +46,6 @@ def test_dump_users(testdir):
             userid='FF00FF',
         ),
     ]
-    viewo_api.user.data.dump_users(users, outpath)
-    loaded = viewo_api.user.data.load_users(outpath)
+    viewo_api.user.serialize.dump_users(users, outpath)
+    loaded = viewo_api.user.serialize.load_users(outpath)
     assert loaded == users

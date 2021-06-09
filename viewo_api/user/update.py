@@ -11,13 +11,14 @@ import link
 import utila
 
 import viewo_api.user.data
+import viewo_api.user.serialize
 
 
 def user_update(user: 'User', verify=False) -> bool:
     path = viewo_api.user.data.userpath(user.userid, verify=verify)
     if not path:
         return False
-    dumped = viewo_api.user.data.dump_user(user)
+    dumped = viewo_api.user.serialize.dump_user(user)
     # TODO: NOT THREAD SAFE
     utila.file_replace(path, dumped)
     return True

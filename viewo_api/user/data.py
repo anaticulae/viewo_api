@@ -12,11 +12,10 @@ import os
 import typing
 
 import flask_login
-import utila
-import yaml
 
 import viewo_api.user.config
 import viewo_api.user.password
+import viewo_api.user.serialize
 
 
 @dataclasses.dataclass(unsafe_hash=True)
@@ -39,48 +38,11 @@ class User:
 Users = typing.List[User]
 
 
-def user_raw(user: User) -> dict:
-    result = {
-        'documents': user.documents,
-        'userid': user.userid,
-        'payed': user.payed,
-    }
-    return result
-
-
-def load_users(path: str) -> Users:
-    assert os.path.exists(path), path
-    files = utila.file_list(path)
-    files = utila.files_sort(files)
-    loaded = [load_user(os.path.join(path, item)) for item in files]
-    return loaded
-
-
-def dump_users(users: Users, path: str):
-    assert os.path.exists(path), path
-    for user in users:
-        dumped = dump_user(user)
-        outpath = os.path.join(path, user.userid)
-        utila.file_replace(outpath, dumped)
-
-
-def load_user(path: str) -> User:
-    loaded = utila.yaml_from_raw_or_path(path)
-    result = User(**loaded)
-    return result
-
-
-def dump_user(user: User) -> str:
-    raw = vars(user)
-    dumped = yaml.safe_dump(raw)
-    return dumped
-
-
 def user_fromid(userid: str) -> User:
     path = userpath(userid, verify=True)
     if not path:
         return None
-    loaded = load_user(path)
+    loaded = viewo_api.user.serialize.load_user(path)
     return loaded
 
 
@@ -92,8 +54,9 @@ def userpath(userid: int, verify: bool = False) -> str:
 
 
 def userlist():
-    common_user = load_users(viewo_api.user.config.userspath())
-    raw = [user_raw(item) for item in common_user]
+    common_user = viewo_api.user.serialize.load_users(
+        viewo_api.user.config.userspath())
+    raw = [viewo_api.user.serialize.user_raw(item) for item in common_user]
     return raw
 
 
