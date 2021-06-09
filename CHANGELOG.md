@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.7.4
+
+### Feature
+
+* add method to load user list (5a1562306572)
+
 ## v0.7.3
 
 ### Feature
