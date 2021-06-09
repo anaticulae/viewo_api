@@ -7,7 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-
 import viewo_api.user.data
 import viewo_api.user.serialize
 
