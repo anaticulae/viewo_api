@@ -9,16 +9,17 @@
 
 import os
 
+import configo
+
 import viewo_api.config
 
-# TODO: HOLY SECURE VALUE # CONFIGO!
-PASSWORD_SALT = 'THISISSALT'  # nosec
-PASSWORD_RANDOM_LENGTH = 16
+PASSWORD_SALT = configo.HV_STR(default='THISISSALT')
+PASSWORD_RANDOM_LENGTH = configo.HV_INT_PLUS(default=16)
 
-PASSWORD_MIN_LENGTH = 8
-PASSWORD_MAX_LENGTH = 64
+PASSWORD_MIN_LENGTH = configo.HV_INT_PLUS(default=8)
+PASSWORD_MAX_LENGTH = configo.HV_INT_PLUS(default=64)
 
-USER_LENGTH = 16  # TODO: HOLY VALUE
+USER_LENGTH = configo.HV_INT_PLUS(default=16)
 
 
 def userspath():
