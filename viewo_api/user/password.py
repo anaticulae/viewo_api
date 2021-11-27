@@ -46,6 +46,10 @@ def password_valid(password: str) -> bool:
 
 
 def hashed(password: str) -> str:
+    """\
+    >>> len(hashed('nononono'))
+    64
+    """
     password_valid(password)
     password = utila.secure_hash(
         password,
