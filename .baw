@@ -4,4 +4,3 @@ name = common viewo api
 
 [release]
 fail_on_finding = True
-
