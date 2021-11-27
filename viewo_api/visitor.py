@@ -42,6 +42,12 @@ def access(env: Env):
     return Access(env.ip, env.agent)
 
 
+def user_current() -> int:
+    current = request()
+    hashed = user_hash(current.ip, current.agent)
+    return hashed
+
+
 def oneline(data, limit: int = 256):
     r"""Remove newlines and shrink content to `limit` to avoid logging to
     mutch data.

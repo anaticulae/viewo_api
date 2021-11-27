@@ -25,6 +25,7 @@ from viewo_api.user.state import logout
 from viewo_api.visitor import access
 from viewo_api.visitor import oneline
 from viewo_api.visitor import request
+from viewo_api.visitor import user_current
 from viewo_api.visitor import user_hash
 
 __version__ = '0.8.0'
