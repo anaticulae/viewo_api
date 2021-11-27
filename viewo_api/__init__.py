@@ -22,6 +22,10 @@ from viewo_api.user.password import password_verify
 from viewo_api.user.password import username_valid
 from viewo_api.user.state import login
 from viewo_api.user.state import logout
+from viewo_api.visitor import access
+from viewo_api.visitor import oneline
+from viewo_api.visitor import request
+from viewo_api.visitor import user_hash
 
 __version__ = '0.7.4'
 
