@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.8.1
+
+### Feature
+
+* add method to determine current user (3e2d1fb47a4b)
+
 ## v0.8.0
 
 ### Feature
