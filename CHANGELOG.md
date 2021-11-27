@@ -2,6 +2,13 @@
 
 Every noteable change is logged here.
 
+## v0.8.0
+
+### Feature
+
+* add method to determine visitor (14bda5aeffcb)
+* use holy values (b04f2152ce75)
+
 ## v0.7.4
 
 ### Feature

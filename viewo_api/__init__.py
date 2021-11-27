@@ -27,6 +27,6 @@ from viewo_api.visitor import oneline
 from viewo_api.visitor import request
 from viewo_api.visitor import user_hash
 
-__version__ = '0.7.4'
+__version__ = '0.8.0'
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
