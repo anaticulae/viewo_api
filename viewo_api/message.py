@@ -9,9 +9,11 @@
 
 import flask
 
+import viewo_api
+
 
 def success(message: str = 'completed', **args):
-    result = flask.jsonify({
+    result = viewo_api.json({
         'message': message,
         **args,
     })
@@ -19,7 +21,7 @@ def success(message: str = 'completed', **args):
 
 
 def notfound(message: str):
-    result = flask.jsonify({
+    result = viewo_api.json({
         'error': 'not found',
         'message': message,
     })
@@ -27,7 +29,7 @@ def notfound(message: str):
 
 
 def bad(message: str):
-    result = flask.jsonify({
+    result = viewo_api.json({
         'error': 'bad request',
         'message': message,
     })
@@ -35,7 +37,7 @@ def bad(message: str):
 
 
 def internal(message: str):
-    result = flask.jsonify({
+    result = viewo_api.json({
         'error': 'internal',
         'message': message,
     })
