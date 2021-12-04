@@ -15,7 +15,7 @@ import utila
 Access = collections.namedtuple('Access', 'ip, agent')
 Env = collections.namedtuple(
     'Env',
-    'hashed, time, ip, agent, method, path, data',
+    'hashed, time, ip, agent, method, path, data, dictum',
 )
 
 
@@ -31,7 +31,8 @@ def request() -> Env:
     data = env.get('QUERY_STRING', 'NO_QUERY_STRING')
     data = oneline(data)
     time = utila.now()
-    return Env(hashed, time, ip, agent, method, path, data)
+    dictum = flask.request.form.to_dict()
+    return Env(hashed, time, ip, agent, method, path, data, dictum)
 
 
 def user_hash(ip, agent) -> int:
