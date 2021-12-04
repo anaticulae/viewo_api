@@ -2,6 +2,13 @@
 
 Every noteable change is logged here.
 
+## v0.9.0
+
+### Feature
+
+* store post values as separate field (946a4756bc9b)
+* move JSON converter to separate method (9191bed8d637)
+
 ## v0.8.1
 
 ### Feature
