@@ -10,7 +10,8 @@
 import flask
 import utila
 
-import viewo_api.user.config
+import viewo_api.config
+import viewo_api.user
 
 
 class PasswordError(ValueError):
@@ -38,9 +39,9 @@ def password_valid(password: str) -> bool:
     if password is None:
         return False
     password = str(password)
-    if len(password) < viewo_api.user.config.PASSWORD_MIN_LENGTH:
+    if len(password) < viewo_api.config.PASSWORD_MIN_LENGTH:
         raise PasswordTooShort
-    if len(password) > viewo_api.user.config.PASSWORD_MAX_LENGTH:
+    if len(password) > viewo_api.config.PASSWORD_MAX_LENGTH:
         raise PasswordTooLong
     return True
 
@@ -53,14 +54,14 @@ def hashed(password: str) -> str:
     password_valid(password)
     password = utila.secure_hash(
         password,
-        salt=viewo_api.user.config.PASSWORD_SALT,
+        salt=viewo_api.config.PASSWORD_SALT,
         digits=64,
     )  # pylint:disable=E1101
     return password
 
 
 def password_generate() -> str:
-    random = utila.tmpname(viewo_api.user.config.PASSWORD_RANDOM_LENGTH)
+    random = utila.tmpname(viewo_api.config.PASSWORD_RANDOM_LENGTH)
     return random
 
 
@@ -89,6 +90,6 @@ def username_valid(name) -> False:
     >>> username_valid(' 12  xxx')
     False
     """
-    if not len(name) == viewo_api.user.config.USER_LENGTH:
+    if not len(name) == viewo_api.config.USER_LENGTH:
         return False
     return all(item.isalnum() for item in name)
