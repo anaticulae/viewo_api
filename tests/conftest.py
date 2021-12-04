@@ -7,4 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+from tests.app import client  # pylint:disable=W0611
+
 pytest_plugins = ['pytester', 'xdist']  # pylint: disable=invalid-name
