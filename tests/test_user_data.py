@@ -7,14 +7,32 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import viewo_api.user.create
-import viewo_api.user.data
+import viewo_api
+
+PASSWORD, MAIL = 'helmut1337', 'helm@helm.com'  # nosec
 
 
 def test_user_list_create_list(client):  # pylint:disable=W0613
-    users = viewo_api.user.data.userlist()
+    users = viewo_api.userlist()
     assert not users
-    password = 'helmut1337'
-    viewo_api.user.create.create_user(password=password)
-    users = viewo_api.user.data.userlist()
+    viewo_api.create_user(password=PASSWORD)
+    users = viewo_api.userlist()
     assert len(users) == 1
+
+
+def test_user_public_fromid(client):  # pylint:disable=W0613
+    user = viewo_api.create_user(password=PASSWORD)
+    public = viewo_api.userpublic_fromid(userid=user.userid)
+    assert not public['documents']
+    user.email = MAIL
+    viewo_api.user_update(user)
+    public = viewo_api.userpublic_fromid(userid=user.userid)
+    assert public['email'] == MAIL
+
+
+def test_user_update(client):  # pylint:disable=W0613
+    user = viewo_api.create_user(password=PASSWORD)
+    user.email = MAIL
+    viewo_api.user_update(user)
+    public = viewo_api.userpublic_fromid(userid=user.userid)
+    assert public['email'] == MAIL
