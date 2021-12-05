@@ -36,3 +36,12 @@ def test_user_update(client):  # pylint:disable=W0613
     viewo_api.user_update(user)
     public = viewo_api.userpublic_fromid(userid=user.userid)
     assert public['email'] == MAIL
+
+
+def test_user_append_document(client):  # pylint:disable=W0613
+    user = viewo_api.create_user(password=PASSWORD)
+    public = viewo_api.userpublic_fromid(userid=user.userid)
+    assert not public['documents']
+    viewo_api.user_append_document(user.userid, '111111')
+    public = viewo_api.userpublic_fromid(userid=user.userid)
+    assert public['documents']
