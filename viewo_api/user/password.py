@@ -60,8 +60,11 @@ def hashed(password: str) -> str:
     return password
 
 
-def password_generate() -> str:
-    random = utila.tmpname(viewo_api.config.PASSWORD_RANDOM_LENGTH)
+def password_generate(length=viewo_api.config.PASSWORD_RANDOM_LENGTH) -> str:
+    """\
+    >>> assert len(password_generate(10)) == 10
+    """
+    random = utila.tmpname(length)
     return random
 
 
