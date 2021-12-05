@@ -54,8 +54,8 @@ def userpath(userid: int, verify: bool = False) -> str:
 
 
 def userlist():
-    common_user = viewo_api.user.serialize.load_users(
-        viewo_api.user.config.userspath())
+    upath = viewo_api.user.config.userspath()
+    common_user = viewo_api.user.serialize.load_users(upath)
     raw = [viewo_api.user.serialize.user_raw(item) for item in common_user]
     return raw
 
