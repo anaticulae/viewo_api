@@ -24,10 +24,11 @@ def user_update(user: 'User', verify=False) -> bool:
     return True
 
 
-def user_append_document(userid: str, documentid: str):
+def user_append_document(userid: str, documentid: str) -> bool:
     if userid == link.PUBLIC_OWNER:
         # do not add public document to public user
-        return
+        return False
     user = viewo_api.user.data.user_fromid(userid)
     user.append_document(documentid)
     user_update(user)
+    return True
