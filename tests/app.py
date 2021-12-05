@@ -7,9 +7,14 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import http
+import os
+
 import flask
+import flask_login
 import pytest
 
+import viewo_api.message
 import viewo_api.visitor
 
 
@@ -17,16 +22,30 @@ import viewo_api.visitor
 def client(testdir):
     config = create_config(testdir.tmpdir)
     app = flask.Flask(__name__)
+    app.secret_key = os.urandom(64)
     app.config.update(config)
+    loginmanager = flask_login.LoginManager(app)
+    loginmanager._user_callback = lambda x: viewo_api.FlaskUser(identifier=x)  # pylint:disable=W0212
 
     @app.route('/return_request')
     def client_instance():
         result = viewo_api.visitor.request()
         return str(result), 200
 
-    instance = app.test_client()
+    @app.route('/login', methods=['POST'])
+    def login():
+        send = flask.request.form.to_dict()
+        if not viewo_api.login(send['user'], send['password']):
+            return str('wrong'), http.HTTPStatus.FORBIDDEN
+        return str('erfolgreich'), 200
+
+    @app.route('/logout')
+    def logout():
+        viewo_api.logout()
+        return viewo_api.message.success('erfolgreich')
+
     with app.app_context():
-        yield instance
+        yield app.test_client()
 
 
 def create_config(tmpdir):
