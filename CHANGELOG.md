@@ -2,6 +2,14 @@
 
 Every noteable change is logged here.
 
+## v0.10.0
+
+### Feature
+
+* signal that update was successful or not (d9bd39c71329)
+* add option to change generated password length (f6c521ff9c48)
+* extend public API (e8fb695eeb99)
+
 ## v0.9.0
 
 ### Feature
