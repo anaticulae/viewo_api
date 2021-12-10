@@ -13,10 +13,10 @@ PASSWORD, MAIL = 'helmut1337', 'helm@helm.com'  # nosec
 
 
 def test_user_list_create_list(client):  # pylint:disable=W0613
-    users = viewo_api.userlist()
+    users = viewo_api.userlist_raw()
     assert not users
     viewo_api.create_user(password=PASSWORD)
-    users = viewo_api.userlist()
+    users = viewo_api.userlist_raw()
     assert len(users) == 1
 
 
