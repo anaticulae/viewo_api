@@ -71,6 +71,8 @@ def userpublic_fromid(userid: str) -> dict:
         'documents': list(user.documents),
     }
     if user.email:
+        # TODO: IS THIS A GOOD IDEA?
+        # TODO: VERIFY BEFORE RELEASE XXX
         result['email'] = user.email
     if user.payed is not None:
         result['payed'] = user.payed
