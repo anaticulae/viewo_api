@@ -71,6 +71,9 @@ def password_generate(length=viewo_api.config.PASSWORD_RANDOM_LENGTH) -> str:
 def password_verify(userid: str, password: str) -> bool:
     user = viewo_api.user.data.user_fromid(userid)
     if not user:
+        # try to select user via email
+        user = viewo_api.user.data.user_from_email(userid)
+    if not user:
         return False
     try:
         password = viewo_api.user.password.hashed(password)

@@ -15,6 +15,7 @@ import viewo_api
 import viewo_api.user.state
 
 PASSWORD = 'helmut1337'  # nosec
+MAIL = 'modern@modern.com'
 
 
 def test_login_logout(client):  # pylint:disable=W0613
@@ -35,3 +36,14 @@ def test_login_wrong_password(client):  # pylint:disable=W0613
         data=dict(user=user.userid, password='wrong'),  # nosec
         expected=http.HTTPStatus.FORBIDDEN,
     )
+
+
+def test_login_withmail(client):  # pylint:disable=W0613
+    user = viewo_api.create_user(password=PASSWORD)
+    assert viewo_api.create_email(email=MAIL, userid=user.userid)
+    utilatest.apipost(
+        client,
+        '/login',
+        data=dict(user=MAIL, password=PASSWORD),
+    )
+    utilatest.apicall(client, '/logout')

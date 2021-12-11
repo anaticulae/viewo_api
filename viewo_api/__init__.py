@@ -18,6 +18,7 @@ from viewo_api.user.create import create_email
 from viewo_api.user.create import create_user
 from viewo_api.user.data import FlaskUser
 from viewo_api.user.data import User
+from viewo_api.user.data import hash_email
 from viewo_api.user.data import user_fromid
 from viewo_api.user.data import userlist_raw
 from viewo_api.user.data import userpublic_fromid
