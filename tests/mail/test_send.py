@@ -7,12 +7,12 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import viewo_api.mail.create
+import viewo_api.mail.app
 import viewo_api.mail.send
 
 
 def test_send(client_mail, smtpserver):  # pylint:disable=W0613
-    viewo_api.mail.create.configure(
+    viewo_api.mail.app.configure(
         server=smtpserver.addr[0],
         port=smtpserver.addr[1],
     )

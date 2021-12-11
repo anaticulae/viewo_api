@@ -14,7 +14,7 @@ import flask
 import flask_login
 import pytest
 
-import viewo_api.mail.create
+import viewo_api.mail.app
 import viewo_api.message
 import viewo_api.visitor
 
@@ -56,7 +56,7 @@ def client(app):  # pylint:disable=W0621
 
 @pytest.fixture
 def client_mail(app):  # pylint:disable=W0621
-    viewo_api.mail.create.register(app)
+    viewo_api.mail.app.register(app)
     with app.app_context():
         yield app.test_client()
 
