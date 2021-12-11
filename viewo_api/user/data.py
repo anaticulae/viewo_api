@@ -12,6 +12,7 @@ import os
 import typing
 
 import flask_login
+import utila
 
 import viewo_api.user.config
 import viewo_api.user.password
@@ -41,9 +42,22 @@ Users = typing.List[User]
 def user_fromid(userid: str) -> User:
     path = userpath(userid, verify=True)
     if not path:
+        # try to find user via email
+        user = user_from_email(userid)
+        return user
+    if not path:
         return None
     loaded = viewo_api.user.serialize.load_user(path)
     return loaded
+
+
+def user_from_email(email: str) -> User:
+    email = hash_email(email)
+    for user in users():
+        if user.email != email:
+            continue
+        return user
+    return None
 
 
 def userpath(userid: int, verify: bool = False) -> str:
@@ -51,6 +65,12 @@ def userpath(userid: int, verify: bool = False) -> str:
     if verify and not os.path.exists(result):
         return None
     return result
+
+
+def users():
+    upath = viewo_api.user.config.userspath()
+    common_user = viewo_api.user.serialize.load_users(upath)
+    return common_user
 
 
 def userlist_raw():
@@ -77,6 +97,19 @@ def userpublic_fromid(userid: str) -> dict:
     if user.payed is not None:
         result['payed'] = user.payed
     return result
+
+
+def hash_email(email: str):
+    """\
+    >>> hash_email('toy@roy.com')
+    '...'
+    """
+    email = utila.secure_hash(
+        email,
+        salt=viewo_api.config.EMAIL_SALT,
+        digits=viewo_api.config.EMAIL_DIGITS,
+    )
+    return email
 
 
 @dataclasses.dataclass

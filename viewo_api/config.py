@@ -21,6 +21,14 @@ PASSWORD_MAX_LENGTH = configo.HV_INT_PLUS(default=64)
 
 USER_LENGTH = configo.HV_INT_PLUS(default=16)
 
+EMAIL_SALT = configo.HV_STR(default='EMAILNOGMAIL')
+
+EMAIL_DIGITS = configo.HV_INT_PLUS(default=64)
+
+EMAIL_NO_AUTHOR = configo.HV_STR(default='postkasten@checkitweg.de')
+
+EMAIL_SERVER = configo.HV_STR(default='guardian@checkitweg.de')
+
 
 def common():
     return flask.current_app.config['COMMON']
