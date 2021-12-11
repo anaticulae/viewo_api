@@ -14,16 +14,22 @@ import flask
 import flask_login
 import pytest
 
+import viewo_api.mail.create
 import viewo_api.message
 import viewo_api.visitor
 
 
 @pytest.fixture
-def client(testdir):
+def app(testdir):
     config = create_config(testdir.tmpdir)
-    app = flask.Flask(__name__)
-    app.secret_key = os.urandom(64)
-    app.config.update(config)
+    appx = flask.Flask(__name__)
+    appx.secret_key = os.urandom(64)
+    appx.config.update(config)
+    return appx
+
+
+@pytest.fixture
+def client(app):  # pylint:disable=W0621
     loginmanager = flask_login.LoginManager(app)
     loginmanager._user_callback = lambda x: viewo_api.FlaskUser(identifier=x)  # pylint:disable=W0212
 
@@ -44,6 +50,13 @@ def client(testdir):
         viewo_api.logout()
         return viewo_api.message.success('erfolgreich')
 
+    with app.app_context():
+        yield app.test_client()
+
+
+@pytest.fixture
+def client_mail(app):  # pylint:disable=W0621
+    viewo_api.mail.create.register(app)
     with app.app_context():
         yield app.test_client()
 
