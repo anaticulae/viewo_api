@@ -16,10 +16,18 @@ def register(app):
     app.mail = mail
 
 
-def configure(server, user, password, tls: bool = True, port: int = 587):
+def configure(
+    server,
+    user=None,
+    password=None,
+    tls: bool = False,
+    port: int = 587,
+):
     config = flask.current_app.config
     config['MAIL_SERVER'] = server
     config['MAIL_PORT'] = port
     config['MAIL_USERNAME'] = user
     config['MAIL_PASSWORD'] = password
     config['MAIL_USE_TLS'] = tls
+    config['MAIL_SUPPRESS_SEND'] = False
+    flask.current_app.mail.init_app(flask.current_app)

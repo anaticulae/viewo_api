@@ -7,8 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import threading
-
 import flask
 import flask_mail
 
@@ -25,14 +23,15 @@ def send_mail(
         recipients=[recipient],
         subject=subject,
         body=body,
-        sender=author,
+        sender=author.value,
     )
-    threading.Thread(
-        target=send_async,
-        args=[flask.current_app, msg],
-    ).start()
+    flask.current_app.mail.send(msg)
+    # threading.Thread(
+    #     target=send_async,
+    #     args=[flask.current_app, msg],
+    # ).start()
 
 
-def send_async(app, msg):
-    with app.app_context():
-        app.mail.send(msg)
+# def send_async( msg):
+#     with app.app_context():
+#         app.mail.send(msg)
