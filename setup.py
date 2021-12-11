@@ -44,6 +44,7 @@ if __name__ == "__main__":
         ],
         packages=[
             'viewo_api',
+            'viewo_api.mail',
             'viewo_api.user',
         ],
     )
