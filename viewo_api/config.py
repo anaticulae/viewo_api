@@ -28,6 +28,8 @@ EMAIL_DIGITS = configo.HV_INT_PLUS(default=64)
 EMAIL_NO_AUTHOR = configo.HV_STR(default='postkasten@checkitweg.de')
 
 EMAIL_SERVER = configo.HV_STR(default='guardian@checkitweg.de')
+# inform admin about new customer
+EMAIL_CUSTOMER_NEW = configo.env('CHANIA_CUSTOMER_NEW', default=None)
 
 
 def common():
