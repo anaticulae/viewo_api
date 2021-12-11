@@ -11,11 +11,8 @@ import viewo_api.mail.app
 import viewo_api.mail.send
 
 
-def test_send(client_mail, smtpserver):  # pylint:disable=W0613
-    viewo_api.mail.app.configure(
-        server=smtpserver.addr[0],
-        port=smtpserver.addr[1],
-    )
+def test_send(client_mail):  # pylint:disable=W0613
+    smtpserver = client_mail[1]
     assert not smtpserver.outbox
     viewo_api.mail.send.send_mail(
         recipient='helmut@helmut.com',

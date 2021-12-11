@@ -55,10 +55,14 @@ def client(app):  # pylint:disable=W0621
 
 
 @pytest.fixture
-def client_mail(app):  # pylint:disable=W0621
+def client_mail(app, smtpserver):  # pylint:disable=W0621
     viewo_api.mail.app.register(app)
     with app.app_context():
-        yield app.test_client()
+        viewo_api.mail.app.configure(
+            server=smtpserver.addr[0],
+            port=smtpserver.addr[1],
+        )
+        yield app.test_client(), smtpserver
 
 
 def create_config(tmpdir):
