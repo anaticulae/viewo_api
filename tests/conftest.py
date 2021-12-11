@@ -11,4 +11,4 @@ from tests.app import app  # pylint:disable=W0611
 from tests.app import client  # pylint:disable=W0611
 from tests.app import client_mail  # pylint:disable=W0611
 
-pytest_plugins = ['pytester', 'xdist']  # pylint: disable=invalid-name
+pytest_plugins = ['pytester', 'xdist', 'localserver']  # pylint: disable=invalid-name
