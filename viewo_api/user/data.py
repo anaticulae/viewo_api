@@ -21,7 +21,6 @@ import viewo_api.user.serialize
 
 @dataclasses.dataclass(unsafe_hash=True)
 class User:
-
     email: str = None
     password: str = None
     documents: list = dataclasses.field(default_factory=list)

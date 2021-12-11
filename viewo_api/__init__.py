@@ -14,6 +14,7 @@ from viewo_api.message import internal
 from viewo_api.message import notfound
 from viewo_api.message import success
 from viewo_api.user.config import userspath
+from viewo_api.user.create import create_email
 from viewo_api.user.create import create_user
 from viewo_api.user.data import FlaskUser
 from viewo_api.user.data import User
