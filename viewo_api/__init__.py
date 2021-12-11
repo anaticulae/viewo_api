@@ -9,6 +9,7 @@
 
 import os
 
+from viewo_api.mail.send import send_mail
 from viewo_api.message import bad
 from viewo_api.message import internal
 from viewo_api.message import notfound
