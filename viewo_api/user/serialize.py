@@ -10,7 +10,6 @@
 import os
 
 import utila
-import yaml
 
 import viewo_api.user.data
 
@@ -42,7 +41,7 @@ def load_users(path: str) -> 'Users':
 
 def dump_user(user: 'User') -> str:
     raw = vars(user)
-    dumped = yaml.safe_dump(raw)
+    dumped = utila.yaml_dump(raw)
     return dumped
 
 
