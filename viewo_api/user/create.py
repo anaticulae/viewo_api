@@ -11,7 +11,6 @@ import os
 
 import utila
 
-import viewo_api
 import viewo_api.config
 import viewo_api.user.data
 import viewo_api.user.password
@@ -30,13 +29,3 @@ def create_user(password: str, userid: str = None):
     # write to user database
     viewo_api.user.update.user_update(new)
     return new
-
-
-def create_email(email: str, userid: str = None) -> bool:
-    user = viewo_api.user.data.user_fromid(userid)
-    if not user:
-        return False
-    user.email = viewo_api.hash_email(email)
-    # write to user database
-    viewo_api.user.update.user_update(user)
-    return True

@@ -40,7 +40,7 @@ def test_login_wrong_password(client):  # pylint:disable=W0613
 
 def test_login_withmail(client):  # pylint:disable=W0613
     user = viewo_api.create_user(password=PASSWORD)
-    assert viewo_api.create_email(email=MAIL, userid=user.userid)
+    assert viewo_api.user_email_update(email=MAIL, userid=user.userid)
     utilatest.apipost(
         client,
         '/login',

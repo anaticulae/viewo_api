@@ -10,6 +10,7 @@
 import link
 import utila
 
+import viewo_api
 import viewo_api.user.data
 import viewo_api.user.serialize
 
@@ -30,5 +31,15 @@ def user_append_document(userid: str, documentid: str) -> bool:
         return False
     user = viewo_api.user.data.user_fromid(userid)
     user.append_document(documentid)
+    user_update(user)
+    return True
+
+
+def user_email_update(email: str, userid: str = None) -> bool:
+    user = viewo_api.user.data.user_fromid(userid)
+    if not user:
+        return False
+    user.email = viewo_api.hash_email(email)
+    # write to user database
     user_update(user)
     return True

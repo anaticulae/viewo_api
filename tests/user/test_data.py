@@ -41,7 +41,7 @@ def test_user_update(client):  # pylint:disable=W0613
 def test_user_email_set(client):  # pylint:disable=W0613
     user = viewo_api.create_user(password=PASSWORD)
     userid = user.userid
-    viewo_api.create_email(MAIL, userid=userid)
+    viewo_api.user_email_update(MAIL, userid=userid)
     public = viewo_api.userpublic_fromid(userid=user.userid)
     assert public['email']
     # ensure that email is hashed
