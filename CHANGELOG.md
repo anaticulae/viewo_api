@@ -2,6 +2,23 @@
 
 Every noteable change is logged here.
 
+## v0.11.0
+
+### Feature
+
+* add method to inform admin about new upload (f27c121efb5f)
+* add method to send emails (130ae806d969)
+* add login via email (878ca9fc2e29)
+* add method to send email asynchronously (4db2e274fcb7)
+* add method to configure email (939a01d8a0fd)
+* add method to send emails (3ae1af54de1e)
+* add method to create user email (e29871f71937)
+* add method to determine user by email (a3d48fe617c0)
+
+### Fix
+
+* adjust mail sender (e15dd119511d)
+
 ## v0.10.0
 
 ### Feature
