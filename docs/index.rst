@@ -1,5 +1,5 @@
-Welcome to common viewo api
-=================================
+welcome to common viewo api
+===========================
 
 Progress
 --------
@@ -12,11 +12,12 @@ Progress
   pages/changelog
 
 Modules
---------------------
+-------
+
 .. toctree::
    :maxdepth: 4
 
-   .tmp/modules
+   modules
 
 Indices and tables
 ==================
@@ -24,4 +25,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
