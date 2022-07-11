@@ -31,7 +31,12 @@ def request() -> Env:
     data = env.get('QUERY_STRING', 'NO_QUERY_STRING')
     data = oneline(data)
     time = utila.now()
-    dictum = flask.request.form.to_dict()
+    try:
+        dictum = flask.request.form.to_dict()
+    except OSError:
+        utila.error(f'invalid/incomplete request: {flask.request}')
+        utila.debug(vars(flask.request))
+        dictum = dict()
     return Env(hashed, time, ip, agent, method, path, data, dictum)
 
 
