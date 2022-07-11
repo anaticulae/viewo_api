@@ -2,6 +2,17 @@
 
 Every noteable change is logged here.
 
+## v0.11.1
+
+### Fix
+
+* do not fail on upload file when using directory (a4e94cbdf4f7)
+
+### Documentation
+
+* adjust modules path (5b8985485615)
+* Happy New Year! (0f12964f87db)
+
 ## v0.11.0
 
 ### Feature
