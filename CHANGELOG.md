@@ -1,4 +1,4 @@
-# changelog
+# Changelog
 
 Every noteable change is logged here.
 
@@ -144,4 +144,3 @@ Every noteable change is logged here.
 * add default http messages (3be304c1f182)
 
 ## v0.0.0 Initial release
-
