@@ -13,4 +13,4 @@ import utilatest
 def test_request(client):  # pylint:disable=W0621
     response = utilatest.decode(client.get('/return_request'))
     assert 'Env(hashed=' in response
-    assert "ip='NO_REMOTE_ADDR', agent='werkzeug/2.0.0'" in response
+    assert "agent='werkzeug/2.2.2', method='GET', path='/return_request'" in response

@@ -7,10 +7,13 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import pytest
+
 import viewo_api.mail.app
 import viewo_api.mail.send
 
 
+@pytest.mark.xfail(reason='install aiosmtpd')
 def test_send(client_mail):  # pylint:disable=W0613
     smtpserver = client_mail[1]
     assert not smtpserver.outbox
