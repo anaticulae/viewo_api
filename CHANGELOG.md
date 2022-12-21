@@ -2,6 +2,15 @@
 
 Every noteable change is logged here.
 
+## v0.11.3 (2022-12-21)
+
+### Chore
+
+* add missing fixture (5fbbf7a40e0b)
+* upgrade requirements.txt (35d3595b6e22)
+* upgrade pipeline (c7d773b96213)
+* do not run in privileged mode (df704faf81b8)
+
 ## v0.11.2 (2022-10-06)
 
 ### Chore
