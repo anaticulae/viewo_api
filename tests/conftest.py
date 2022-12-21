@@ -7,6 +7,9 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+from utilatest import mp  # pylint:disable=W0611
+from utilatest import td  # pylint:disable=W0611
+
 from tests.app import app  # pylint:disable=W0611
 from tests.app import client  # pylint:disable=W0611
 from tests.app import client_mail  # pylint:disable=W0611
