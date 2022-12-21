@@ -20,8 +20,8 @@ import viewo_api.visitor
 
 
 @pytest.fixture
-def app(testdir):
-    config = create_config(testdir.tmpdir)
+def app(td):
+    config = create_config(td.tmpdir)
     appx = flask.Flask(__name__)
     appx.secret_key = os.urandom(64)
     appx.config.update(config)

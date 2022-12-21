@@ -36,7 +36,7 @@ def request() -> Env:
     except OSError:
         utila.error(f'invalid/incomplete request: {flask.request}')
         utila.debug(vars(flask.request))
-        dictum = dict()
+        dictum = {}
     return Env(hashed, time, ip, agent, method, path, data, dictum)
 
 

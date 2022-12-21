@@ -9,7 +9,6 @@
 
 import dataclasses
 import os
-import typing
 
 import flask_login
 import utila
@@ -35,7 +34,7 @@ class User:
         return self.documents[index]  # pylint:disable=E1136
 
 
-Users = typing.List[User]
+Users = list[User]
 
 
 def user_fromid(userid: str) -> User:

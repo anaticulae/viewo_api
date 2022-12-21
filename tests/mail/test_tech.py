@@ -16,11 +16,11 @@ AUTHOR = 'helm@helm.com'
 
 
 @pytest.mark.xfail(reason='install aiosmtpd')
-def test_send_new_customer(client_mail, monkeypatch):
+def test_send_new_customer(client_mail, mp):
     smtpserver = client_mail[1]
     assert not smtpserver.outbox
     data = dict(pages=1024, text='hohoh')
-    with monkeypatch.context() as context:
+    with mp.context() as context:
         context.setattr(viewo_api.config, 'EMAIL_CUSTOMER_NEW', AUTHOR)
         viewo_api.send_upload_info(data=data)
     assert smtpserver.outbox

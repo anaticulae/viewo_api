@@ -46,6 +46,6 @@ def dump_user(user: 'User') -> str:
 
 
 def load_user(path: str) -> 'User':
-    loaded = utila.yaml_from_raw_or_path(path)
+    loaded = utila.yaml_load(path)
     result = viewo_api.user.data.User(**loaded)
     return result

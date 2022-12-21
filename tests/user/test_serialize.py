@@ -23,8 +23,8 @@ def test_dump_and_load_user():
     assert loaded == user
 
 
-def test_dump_users(testdir):
-    assert not viewo_api.user.serialize.load_users(testdir.tmpdir)
+def test_dump_users(td):
+    assert not viewo_api.user.serialize.load_users(td.tmpdir)
     users = [  #nosec
         viewo_api.user.data.User(
             email='hans@dampf.eu',
@@ -44,6 +44,6 @@ def test_dump_users(testdir):
             userid='FF00FF',
         ),
     ]
-    viewo_api.user.serialize.dump_users(users, testdir.tmpdir)
-    loaded = viewo_api.user.serialize.load_users(testdir.tmpdir)
+    viewo_api.user.serialize.dump_users(users, td.tmpdir)
+    loaded = viewo_api.user.serialize.load_users(td.tmpdir)
     assert loaded == users
