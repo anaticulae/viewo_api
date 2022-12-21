@@ -7,6 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-utilatest>=0.22.0<1.0.0
+utilatest>=0.25.0<1.0.0
 
 pytest_localserver==0.7.0
