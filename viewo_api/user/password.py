@@ -8,7 +8,7 @@
 # =============================================================================
 
 import flask
-import utila
+import utilo
 
 import viewo_api.config
 import viewo_api.user
@@ -52,7 +52,7 @@ def hashed(password: str) -> str:
     64
     """
     password_valid(password)
-    password = utila.secure_hash(
+    password = utilo.secure_hash(
         password,
         salt=viewo_api.config.PASSWORD_SALT,
         digits=viewo_api.config.PASSWORD_DIGITS,
@@ -64,7 +64,7 @@ def password_generate(length=viewo_api.config.PASSWORD_RANDOM_LENGTH) -> str:
     """\
     >>> assert len(password_generate(10)) == 10
     """
-    random = utila.tmpname(length)
+    random = utilo.tmpname(length)
     return random
 
 

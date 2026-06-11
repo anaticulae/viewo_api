@@ -9,7 +9,7 @@
 
 import os
 
-import utila
+import utilo
 
 import viewo_api.user.data
 
@@ -28,24 +28,24 @@ def dump_users(users: 'Users', path: str):
     for user in users:
         dumped = dump_user(user)
         outpath = os.path.join(path, user.userid)
-        utila.file_replace(outpath, dumped)
+        utilo.file_replace(outpath, dumped)
 
 
 def load_users(path: str) -> 'Users':
     assert os.path.exists(path), path
-    files = utila.file_list(path)
-    files = utila.files_sort(files)
+    files = utilo.file_list(path)
+    files = utilo.files_sort(files)
     loaded = [load_user(os.path.join(path, item)) for item in files]
     return loaded
 
 
 def dump_user(user: 'User') -> str:
     raw = vars(user)
-    dumped = utila.yaml_dump(raw)
+    dumped = utilo.yaml_dump(raw)
     return dumped
 
 
 def load_user(path: str) -> 'User':
-    loaded = utila.yaml_load(path)
+    loaded = utilo.yaml_load(path)
     result = viewo_api.user.data.User(**loaded)
     return result

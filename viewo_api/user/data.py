@@ -11,7 +11,7 @@ import dataclasses
 import os
 
 import flask_login
-import utila
+import utilo
 
 import viewo_api.user.config
 import viewo_api.user.password
@@ -102,7 +102,7 @@ def hash_email(email: str):
     >>> hash_email('toy@roy.com')
     '...'
     """
-    email = utila.secure_hash(
+    email = utilo.secure_hash(
         email,
         salt=viewo_api.config.EMAIL_SALT,
         digits=viewo_api.config.EMAIL_DIGITS,

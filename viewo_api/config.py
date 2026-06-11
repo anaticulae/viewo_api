@@ -7,29 +7,29 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import configo
+import configos
 import flask
 
-PASSWORD_SALT = configo.HV_STR(default='THISISSALT')
+PASSWORD_SALT = configos.HV_STR(default='THISISSALT')
 
-PASSWORD_DIGITS = configo.HV_INT_PLUS(default=64)
+PASSWORD_DIGITS = configos.HV_INT_PLUS(default=64)
 
-PASSWORD_RANDOM_LENGTH = configo.HV_INT_PLUS(default=16)
+PASSWORD_RANDOM_LENGTH = configos.HV_INT_PLUS(default=16)
 
-PASSWORD_MIN_LENGTH = configo.HV_INT_PLUS(default=8)
-PASSWORD_MAX_LENGTH = configo.HV_INT_PLUS(default=64)
+PASSWORD_MIN_LENGTH = configos.HV_INT_PLUS(default=8)
+PASSWORD_MAX_LENGTH = configos.HV_INT_PLUS(default=64)
 
-USER_LENGTH = configo.HV_INT_PLUS(default=16)
+USER_LENGTH = configos.HV_INT_PLUS(default=16)
 
-EMAIL_SALT = configo.HV_STR(default='EMAILNOGMAIL')
+EMAIL_SALT = configos.HV_STR(default='EMAILNOGMAIL')
 
-EMAIL_DIGITS = configo.HV_INT_PLUS(default=64)
+EMAIL_DIGITS = configos.HV_INT_PLUS(default=64)
 
-EMAIL_NO_AUTHOR = configo.HV_STR(default='postkasten@checkitweg.de')
+EMAIL_NO_AUTHOR = configos.HV_STR(default='postkasten@checkitweg.de')
 
-EMAIL_SERVER = configo.HV_STR(default='guardian@checkitweg.de')
+EMAIL_SERVER = configos.HV_STR(default='guardian@checkitweg.de')
 # inform admin about new customer
-EMAIL_CUSTOMER_NEW = configo.env('CHANIA_CUSTOMER_NEW', default=None)
+EMAIL_CUSTOMER_NEW = configos.env('CHANIA_CUSTOMER_NEW', default=None)
 
 
 def common():
@@ -44,6 +44,6 @@ def ready():
     return flask.current_app.config['READY']
 
 
-configo.todo = todo
-configo.ready = ready
-configo.share = common
+configos.todo = todo
+configos.ready = ready
+configos.share = common

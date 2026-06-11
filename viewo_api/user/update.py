@@ -8,7 +8,7 @@
 # =============================================================================
 
 import link
-import utila
+import utilo
 
 import viewo_api
 import viewo_api.user.data
@@ -21,7 +21,7 @@ def user_update(user: 'User', verify=False) -> bool:
         return False
     dumped = viewo_api.user.serialize.dump_user(user)
     # TODO: NOT THREAD SAFE
-    utila.file_replace(path, dumped)
+    utilo.file_replace(path, dumped)
     return True
 
 

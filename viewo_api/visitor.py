@@ -10,7 +10,7 @@
 import collections
 
 import flask
-import utila
+import utilo
 
 Access = collections.namedtuple('Access', 'ip, agent')
 Env = collections.namedtuple(
@@ -30,12 +30,12 @@ def request() -> Env:
     path = env.get('PATH_INFO', 'NO_PATH_INFO')
     data = env.get('QUERY_STRING', 'NO_QUERY_STRING')
     data = oneline(data)
-    time = utila.now()
+    time = utilo.now()
     try:
         dictum = flask.request.form.to_dict()
     except OSError:
-        utila.error(f'invalid/incomplete request: {flask.request}')
-        utila.debug(vars(flask.request))
+        utilo.error(f'invalid/incomplete request: {flask.request}')
+        utilo.debug(vars(flask.request))
         dictum = {}
     return Env(hashed, time, ip, agent, method, path, data, dictum)
 

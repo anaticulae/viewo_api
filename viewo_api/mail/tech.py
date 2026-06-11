@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 import viewo_api
 import viewo_api.config
@@ -23,9 +23,9 @@ New customer on the line!
 def send_upload_info(data: dict = None):
     if viewo_api.config.EMAIL_CUSTOMER_NEW is None:
         msg = 'CONFIGURE: CHANIA_CUSTOMER_NEW could not send_upload_info'
-        utila.error(msg)
+        utilo.error(msg)
         return
-    data = utila.dict_dump(data) if data else ''
+    data = utilo.dict_dump(data) if data else ''
     body = MESSAGE_NEW_BODY.format(data=data)
     viewo_api.send_mail(
         recipient=viewo_api.config.EMAIL_CUSTOMER_NEW,

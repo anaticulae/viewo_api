@@ -7,10 +7,10 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utilatest
+import utilotest
 
 
 def test_request(client):  # pylint:disable=W0621
-    response = utilatest.decode(client.get('/return_request'))
+    response = utilotest.decode(client.get('/return_request'))
     assert 'Env(hashed=' in response
     assert "agent='werkzeug/2.2.2', method='GET', path='/return_request'" in response

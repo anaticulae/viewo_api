@@ -9,7 +9,7 @@
 
 import http
 
-import utilatest
+import utilotest
 
 import viewo_api
 import viewo_api.user.state
@@ -20,17 +20,17 @@ MAIL = 'modern@modern.com'
 
 def test_login_logout(client):  # pylint:disable=W0613
     user = viewo_api.create_user(password=PASSWORD)
-    utilatest.apipost(
+    utilotest.apipost(
         client,
         '/login',
         data=dict(user=user.userid, password=PASSWORD),
     )
-    utilatest.apicall(client, '/logout')
+    utilotest.apicall(client, '/logout')
 
 
 def test_login_wrong_password(client):  # pylint:disable=W0613
     user = viewo_api.create_user(password=PASSWORD)
-    utilatest.apipost(
+    utilotest.apipost(
         client,
         '/login',
         data=dict(user=user.userid, password='wrong'),  # nosec
@@ -41,9 +41,9 @@ def test_login_wrong_password(client):  # pylint:disable=W0613
 def test_login_withmail(client):  # pylint:disable=W0613
     user = viewo_api.create_user(password=PASSWORD)
     assert viewo_api.user_email_update(email=MAIL, userid=user.userid)
-    utilatest.apipost(
+    utilotest.apipost(
         client,
         '/login',
         data=dict(user=MAIL, password=PASSWORD),
     )
-    utilatest.apicall(client, '/logout')
+    utilotest.apicall(client, '/logout')
