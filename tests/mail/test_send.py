@@ -9,7 +9,6 @@
 
 import pytest
 
-import viewo_api.mail.app
 import viewo_api.mail.send
 
 
