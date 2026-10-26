@@ -28,7 +28,7 @@ def test_dump_users(td):
     users = [  #nosec
         viewo_api.user.data.User(
             email='hans@dampf.eu',
-            password='securehash',
+            password='securehash',  #nosec
             documents=[
                 'ADS2399BBD',
                 '2F2ADSL23N99BBD',

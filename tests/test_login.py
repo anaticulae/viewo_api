@@ -23,7 +23,10 @@ def test_login_logout(client):  # pylint:disable=W0613
     utilotest.apipost(
         client,
         '/login',
-        data=dict(user=user.userid, password=PASSWORD),
+        data={
+            'user': user.userid,
+            'password': PASSWORD,
+        },
     )
     utilotest.apicall(client, '/logout')
 
@@ -33,7 +36,10 @@ def test_login_wrong_password(client):  # pylint:disable=W0613
     utilotest.apipost(
         client,
         '/login',
-        data=dict(user=user.userid, password='wrong'),  # nosec
+        data={
+            'user': user.userid,
+            'password': 'wrong'
+        },  # nosec
         expected=http.HTTPStatus.FORBIDDEN,
     )
 
@@ -44,6 +50,9 @@ def test_login_withmail(client):  # pylint:disable=W0613
     utilotest.apipost(
         client,
         '/login',
-        data=dict(user=MAIL, password=PASSWORD),
+        data={
+            'user': MAIL,
+            'password': PASSWORD,
+        },
     )
     utilotest.apicall(client, '/logout')

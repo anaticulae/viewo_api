@@ -24,8 +24,10 @@ def user_update(user: 'User', verify=False) -> bool:
     return True
 
 
+PUBLIC_OWNER = '00000000'
+
+
 def user_append_document(userid: str, documentid: str) -> bool:
-    PUBLIC_OWNER = '00000000'
     # TODO: REPLACE LATER
     if userid == PUBLIC_OWNER:
         # if userid == link.PUBLIC_OWNER:
