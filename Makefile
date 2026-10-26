@@ -7,12 +7,9 @@ NAME = viewo_api
 IMAGE := ghcr.io/anaticulae/$(NAME):$(VERSION)
 
 docker-build:
-	docker build -t $(IMAGE) .
-
-docker-build-base:
 	docker build -f Dockerfile -t $(IMAGE) .
 
-docker-upload-base:
+docker-upload:
 	docker push $(IMAGE)
 
 docker-doctest: docker-build
