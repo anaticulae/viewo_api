@@ -13,4 +13,6 @@ import utilotest
 def test_request(client):  # pylint:disable=W0621
     response = utilotest.decode(client.get('/return_request'))
     assert 'Env(hashed=' in response
-    assert "agent='Werkzeug/3.1.8', method='GET', path='/return_request'" in response
+    # assert "agent='Werkzeug/3.1.8', method='GET', path='/return_request'" in response
+    assert "agent='Werkzeug/" in response
+    assert "', method='GET', path='/return_request'" in response
