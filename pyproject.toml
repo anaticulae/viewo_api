@@ -31,7 +31,7 @@ content-type = "text/markdown"
 [project.optional-dependencies]
 dev = [
     "utilotest>=1.1.1,<2.0.0",
-    "pytest-localserver>=0.10.0,<2.0.0",
+    "pytest-localserver>=0.10.0.post0,<2.0.0",
     "aiosmtpd==1.4.6",
 ]
 
@@ -44,8 +44,8 @@ viewo_api = "viewo_api.cli:main"
 
 [build-system]
 requires = [
-    "setuptools>=82.0.1",
-    "wheel>=0.46.3",
+    "setuptools>=84.2.1",
+    "wheel>=0.48.0",
 ]
 build-backend = "setuptools.build_meta"
 
