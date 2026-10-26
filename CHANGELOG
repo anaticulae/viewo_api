@@ -1,162 +1,465 @@
-# Changelog
+# CHANGELOG
 
-Every noteable change is logged here.
+
+## v1.0.0 (2026-10-26)
+
+### Chores
+
+- **github**: Add .github
+  ([`7774191`](https://github.com/anaticulae/viewo_api/commit/7774191304722360bff34a4bbf99c5597b630bca))
+
+- **license**: Add missing LICENSE
+  ([`f9b5ae6`](https://github.com/anaticulae/viewo_api/commit/f9b5ae65bdcfc0ab81550e37e4c770c93968dcf7))
+
+- **make**: Add make file
+  ([`a636d9e`](https://github.com/anaticulae/viewo_api/commit/a636d9e68480783ad23ad7413e4169b151b6fbb8))
+
+- **project**: Add modern setup
+  ([`e605eb2`](https://github.com/anaticulae/viewo_api/commit/e605eb2a0cfdef4d7f2d194d5e0d5ce698c6045c))
+
+- **pyproject**: Add missing dependency
+  ([`1d16baa`](https://github.com/anaticulae/viewo_api/commit/1d16baaa3c6ada78ff607e7d67f2a0910874339c))
+
+- **pyproject**: Remove unused import
+  ([`b5ee461`](https://github.com/anaticulae/viewo_api/commit/b5ee4612af2a131f23610bd5a2804672c24447dd))
+
+- **requirements**: Upgrade pyproject.toml
+  ([`3e20b4f`](https://github.com/anaticulae/viewo_api/commit/3e20b4f845f372a071674ec4a28416870c88101e))
+
+- **requirements**: Upgrade pyproject.toml
+  ([`1b3dde9`](https://github.com/anaticulae/viewo_api/commit/1b3dde93c98202d35317213aa51fb79cb6fd3b0d))
+
+- **setup**: Use quick installer
+  ([`f9b8f46`](https://github.com/anaticulae/viewo_api/commit/f9b8f46e98c397878fd053091635cbf07711819d))
+
+### Code Style
+
+- **test**: Organize imports
+  ([`75e859c`](https://github.com/anaticulae/viewo_api/commit/75e859cb0931c7d4b0211f5dab7da39841a155d2))
+
+### Refactoring
+
+- **linter**: Solve linter warnings
+  ([`920e127`](https://github.com/anaticulae/viewo_api/commit/920e12740b991b312085a293556a4147a8c44f49))
+
+- **packages**: Adjust packages names
+  ([`675870e`](https://github.com/anaticulae/viewo_api/commit/675870eeb21f9c39011f3c8120432e4275ffcc28))
+
+- **test**: Make test more robust
+  ([`f2859d8`](https://github.com/anaticulae/viewo_api/commit/f2859d813d9636732ebf20ac4b9bc47468584b81))
+
+- **user**: Reduce dependencies
+  ([`bda6673`](https://github.com/anaticulae/viewo_api/commit/bda6673fba400be0f8d24668e6dea1130e5181fc))
+
+### Testing
+
+- **docs**: Adjust test
+  ([`bff622e`](https://github.com/anaticulae/viewo_api/commit/bff622e2e6d055c18c51c7f323f00320d42d1819))
+
+- **mail**: Enable unit test
+  ([`4e06a7e`](https://github.com/anaticulae/viewo_api/commit/4e06a7ec58915035e41220efefb42152304f42ad))
+
 
 ## v0.11.3 (2022-12-21)
 
-### Chore
+### Chores
 
-* add missing fixture (5fbbf7a40e0b)
-* upgrade requirements.txt (35d3595b6e22)
-* upgrade pipeline (c7d773b96213)
-* do not run in privileged mode (df704faf81b8)
+- **conftest**: Add missing fixture
+  ([`5fbbf7a`](https://github.com/anaticulae/viewo_api/commit/5fbbf7a40e0b30bec5cb485c367795746a9b64d2))
+
+- **Jenkins**: Upgrade pipeline
+  ([`c7d773b`](https://github.com/anaticulae/viewo_api/commit/c7d773b96213cf7522db7b0f0a799647d223d7a8))
+
+- **Jenkinsfile**: Do not run in privileged mode
+  ([`df704fa`](https://github.com/anaticulae/viewo_api/commit/df704faf81b8e1bdc8c93d75003abcfb697e9338))
+
+- **requirements**: Upgrade requirements.txt
+  ([`35d3595`](https://github.com/anaticulae/viewo_api/commit/35d3595b6e2268a65179f2e8b3808b1c6c89115a))
+
+### Refactoring
+
+- **replace**: Automated replacement
+  ([`4a3bf4f`](https://github.com/anaticulae/viewo_api/commit/4a3bf4fa0f9a5e683626b86f7a5f8bb73f218191))
+
 
 ## v0.11.2 (2022-10-06)
 
-### Chore
+### Chores
 
-* add Jenkinsfile (4b2b921f580a)
-* upgrade requirements.txt (d300cee95544)
+- **ci**: Add Jenkinsfile
+  ([`4b2b921`](https://github.com/anaticulae/viewo_api/commit/4b2b921f580a63a8730b8fc53e405fef58211b94))
 
-## v0.11.1
+- **requirements**: Upgrade requirements.txt
+  ([`d300cee`](https://github.com/anaticulae/viewo_api/commit/d300cee95544ee4e660613f91f6d9ef236e79367))
 
-### Fix
+### Code Style
 
-* do not fail on upload file when using directory (a4e94cbdf4f7)
+- **changelog**: Adjust for automation tool
+  ([`8f07edb`](https://github.com/anaticulae/viewo_api/commit/8f07edbb4772cac73ad851e62aa15fa368b95335))
 
-### Documentation
+### Testing
 
-* adjust modules path (5b8985485615)
-* Happy New Year! (0f12964f87db)
+- **adjust**: Adjust test after software integration
+  ([`779e86c`](https://github.com/anaticulae/viewo_api/commit/779e86cf7bf9cc3776e10639db3db6a14738f2c4))
 
-## v0.11.0
 
-### Feature
+## v0.11.1 (2022-07-11)
 
-* add method to inform admin about new upload (f27c121efb5f)
-* add method to send emails (130ae806d969)
-* add login via email (878ca9fc2e29)
-* add method to send email asynchronously (4db2e274fcb7)
-* add method to configure email (939a01d8a0fd)
-* add method to send emails (3ae1af54de1e)
-* add method to create user email (e29871f71937)
-* add method to determine user by email (a3d48fe617c0)
+### Bug Fixes
 
-### Fix
+- **visitor**: Do not fail on upload file when using directory
+  ([`a4e94cb`](https://github.com/anaticulae/viewo_api/commit/a4e94cbdf4f7371b11e2bc61b98cc6377cbbf5b4))
 
-* adjust mail sender (e15dd119511d)
+### Chores
 
-## v0.10.0
-
-### Feature
-
-* signal that update was successful or not (d9bd39c71329)
-* add option to change generated password length (f6c521ff9c48)
-* extend public API (e8fb695eeb99)
-
-## v0.9.0
-
-### Feature
-
-* store post values as separate field (946a4756bc9b)
-* move JSON converter to separate method (9191bed8d637)
-
-## v0.8.1
-
-### Feature
-
-* add method to determine current user (3e2d1fb47a4b)
-
-## v0.8.0
-
-### Feature
-
-* add method to determine visitor (14bda5aeffcb)
-* use holy values (b04f2152ce75)
-
-## v0.7.4
-
-### Feature
-
-* add method to load user list (5a1562306572)
-
-## v0.7.3
-
-### Feature
-
-* add public password option (1be8244291db)
-
-## v0.7.2
-
-### Fix
-
-* signal correct update (576f36e56f36)
-
-## v0.7.1
-
-### Feature
-
-* add verify flag, to signal invalid user (2da471b992bf)
-
-## v0.7.0
-
-### Feature
-
-* add method to gather public user data (e4b8468af519)
-
-## v0.6.1
-
-### Feature
-
-* restructure password code (121412bb3661)
-
-## v0.6.0
-
-### Feature
-
-* add option login/logout (bbb37c3d88b7)
+- **requirements**: Upgrade requirements.txt
+  ([`361977e`](https://github.com/anaticulae/viewo_api/commit/361977e5ca877c0eb241132f764f92d36bc8ef3b))
 
 ### Documentation
 
-* fix interface documentation (5746ef0e2d40)
+- **copyright**: Happy New Year!
+  ([`0f12964`](https://github.com/anaticulae/viewo_api/commit/0f12964f87db8fe559c49ddc73e27288425c0078))
 
-## v0.5.1
+- **fix**: Adjust modules path
+  ([`5b89854`](https://github.com/anaticulae/viewo_api/commit/5b89854856153269121a46d11ef653fb568cdf41))
 
-### Fix
 
-* fix user creation (2d1b061e9599)
+## v0.11.0 (2021-12-12)
 
-## v0.5.0
+### Bug Fixes
 
-### Feature
+- **mail**: Adjust mail sender
+  ([`e15dd11`](https://github.com/anaticulae/viewo_api/commit/e15dd119511dad54f300d38b966d76eee09df327))
 
-* add flask login user profile (e564345cdcba)
+### Chores
 
-## v0.4.0
+- **project**: Add localserver
+  ([`4e5488d`](https://github.com/anaticulae/viewo_api/commit/4e5488d156c6e7b21c094d2056373487bf9df738))
 
-### Feature
+- **requirements**: Add flask mail
+  ([`4425f0c`](https://github.com/anaticulae/viewo_api/commit/4425f0ca3ae7da5469d0b2fa09813726bb05d5ee))
 
-* add method to update user (e5efaad3be17)
+- **requirements**: Add missing yaml package
+  ([`10f7aba`](https://github.com/anaticulae/viewo_api/commit/10f7aba50c743a5502cfbe52a4f407c7976dd7d4))
 
-## v0.3.0
+- **requirements**: Upgrade requirements.txt
+  ([`7029a31`](https://github.com/anaticulae/viewo_api/commit/7029a31010f601ca2b8aaa278520ba324241c8cf))
 
-### Feature
+### Features
 
-* add method to create user (3f884a5ec4c5)
+- **API**: Add method to send emails
+  ([`130ae80`](https://github.com/anaticulae/viewo_api/commit/130ae806d969793fe499fdca393366c71f98c7af))
 
-## v0.2.0
+- **create**: Add method to create user email
+  ([`e29871f`](https://github.com/anaticulae/viewo_api/commit/e29871f71937737aff4c9975c10819b566d83c6b))
 
-### Feature
+- **data**: Add method to determine user by email
+  ([`a3d48fe`](https://github.com/anaticulae/viewo_api/commit/a3d48fe617c0452a981f881f81f390474f39e301))
 
-* add user data structures (f7aa96270b0c)
-* add user path (5af32c487c44)
-* add config module (72929e6d36c6)
-* move user code (977a8748ee8e)
+- **login**: Add login via email
+  ([`878ca9f`](https://github.com/anaticulae/viewo_api/commit/878ca9fc2e29fd2f768d28ebf6dedd1b809091cd))
 
-## v0.1.0
+- **mail**: Add method to configure email
+  ([`939a01d`](https://github.com/anaticulae/viewo_api/commit/939a01d8a0fde5b8a8eb9abe45df38f116ea6f96))
 
-### Feature
+- **mail**: Add method to send email asynchronously
+  ([`4db2e27`](https://github.com/anaticulae/viewo_api/commit/4db2e274fcb7c15e761fd1b605bfae12e65666f5))
 
-* add default http messages (3be304c1f182)
+- **mail**: Add method to send emails
+  ([`3ae1af5`](https://github.com/anaticulae/viewo_api/commit/3ae1af54de1eb3aaff6fba0a49e716dc4ab4ef8d))
 
-## v0.0.0 Initial release
+- **tech**: Add method to inform admin about new upload
+  ([`f27c121`](https://github.com/anaticulae/viewo_api/commit/f27c121efb5f68eda89e5d5049a9aab19112bab4))
+
+### Refactoring
+
+- **data**: Clarify naming
+  ([`c5e508a`](https://github.com/anaticulae/viewo_api/commit/c5e508a0c12c6fc69f291e06beeb00d59ef438d6))
+
+- **password**: Move number of password digits to const
+  ([`b60b5b1`](https://github.com/anaticulae/viewo_api/commit/b60b5b106a26cc9752180ef15085bc4d9631f71c))
+
+- **rename**: Improve naming
+  ([`e1e7bec`](https://github.com/anaticulae/viewo_api/commit/e1e7becb5a97068cb5f46d7c490c1275f4d264d1))
+
+- **update**: Move email update method
+  ([`c8f28ae`](https://github.com/anaticulae/viewo_api/commit/c8f28aedd3dd53cb654f5b0aa29cd6237b4a030f))
+
+- **user**: Replace with utila code
+  ([`3821768`](https://github.com/anaticulae/viewo_api/commit/3821768c4fcae0518d0344df7bb15c21a4688bae))
+
+### Testing
+
+- **conf**: Add fixture to split app and email app
+  ([`1c143fc`](https://github.com/anaticulae/viewo_api/commit/1c143fc4c880a0c0e3e068ac14552bfc6e800bc1))
+
+- **mail**: Verify mail sending
+  ([`0a8c3f5`](https://github.com/anaticulae/viewo_api/commit/0a8c3f5cb19da0843f59714d0b486240e108a86e))
+
+- **refactor**: Start smtp server inside fixture
+  ([`83c9058`](https://github.com/anaticulae/viewo_api/commit/83c90580081f7fd5a455d0c6da5c43c65d6cc420))
+
+- **user**: Move to separate package
+  ([`ea7662e`](https://github.com/anaticulae/viewo_api/commit/ea7662e514a6473723d9f60a60f96b82d081ae9d))
+
+
+## v0.10.0 (2021-12-06)
+
+### Code Style
+
+- **format**: Format code
+  ([`388aeeb`](https://github.com/anaticulae/viewo_api/commit/388aeeb5bfb6ece35ec34fc82f0786f2db6c95ca))
+
+### Features
+
+- **API**: Extend public API
+  ([`e8fb695`](https://github.com/anaticulae/viewo_api/commit/e8fb695eeb99250d356d14098acd3493163675ba))
+
+- **user**: Add option to change generated password length
+  ([`f6c521f`](https://github.com/anaticulae/viewo_api/commit/f6c521ff9c4839afd2294b6656dcd7df2986e104))
+
+- **user**: Signal that update was successful or not
+  ([`d9bd39c`](https://github.com/anaticulae/viewo_api/commit/d9bd39c713293610db862e55ac8d27cce26cad6b))
+
+### Refactoring
+
+- **config**: Move parameter to central config
+  ([`e265191`](https://github.com/anaticulae/viewo_api/commit/e2651911e7fb710be9929b4bb601247bcc259dd7))
+
+### Testing
+
+- **app**: Generate tmp folders
+  ([`af14391`](https://github.com/anaticulae/viewo_api/commit/af14391d6fe12d30816da6e27968d029ca1f12e6))
+
+- **data**: Append document to user
+  ([`7557132`](https://github.com/anaticulae/viewo_api/commit/7557132a934ba86a3c06ce3530392b33454f1ffb))
+
+- **login**: Verify login and logout behavior
+  ([`e0b89b1`](https://github.com/anaticulae/viewo_api/commit/e0b89b143eba287953d568c1b1796c44d8a9a118))
+
+- **refactor**: Move app to separate path
+  ([`3561b01`](https://github.com/anaticulae/viewo_api/commit/3561b013b44d2b80ef1b6751ec7d1b4c9b8ebe16))
+
+- **user**: Add test to create and load user
+  ([`1914169`](https://github.com/anaticulae/viewo_api/commit/1914169c5c8ff573a90485f93b0c161c917a20d6))
+
+- **user**: Increase test coverage
+  ([`1d3e108`](https://github.com/anaticulae/viewo_api/commit/1d3e108888b5f3dcde5995fbb772ab642c68146a))
+
+
+## v0.9.0 (2021-12-04)
+
+### Features
+
+- **utils**: Move JSON converter to separate method
+  ([`9191bed`](https://github.com/anaticulae/viewo_api/commit/9191bed8d637ab6209eab64bc28398382ab2bbb3))
+
+- **visit**: Store post values as separate field
+  ([`946a475`](https://github.com/anaticulae/viewo_api/commit/946a4756bc9bca8049dc163894cf5cd6321c9d47))
+
+
+## v0.8.1 (2021-11-27)
+
+### Features
+
+- **visitor**: Add method to determine current user
+  ([`3e2d1fb`](https://github.com/anaticulae/viewo_api/commit/3e2d1fb47a4bcafd68b6828c568938a2716c1e8f))
+
+
+## v0.8.0 (2021-11-27)
+
+### Chores
+
+- **config**: Move project config
+  ([`a030142`](https://github.com/anaticulae/viewo_api/commit/a0301427ebd4bb503e65f9b542658849d6834f49))
+
+- **requirements**: Add utilatest
+  ([`0dadf3e`](https://github.com/anaticulae/viewo_api/commit/0dadf3ea01d5516611cd009e1421b2d996c43f24))
+
+- **requirements**: Upgrade requirements.txt
+  ([`f236c6e`](https://github.com/anaticulae/viewo_api/commit/f236c6eb3d65e210b40b5798a9b0d60cc17b4733))
+
+### Code Style
+
+- **format**: Format code
+  ([`079439c`](https://github.com/anaticulae/viewo_api/commit/079439c8c4f3eaa537b36a543f246ac0cf5e9a5f))
+
+### Features
+
+- **config**: Use holy values
+  ([`b04f215`](https://github.com/anaticulae/viewo_api/commit/b04f2152ce75fc83379030e37e3420e995be8520))
+
+- **visitor**: Add method to determine visitor
+  ([`14bda5a`](https://github.com/anaticulae/viewo_api/commit/14bda5aeffcb8492c64fcd421cb3653838c63b08))
+
+### Testing
+
+- **password**: Increase test cov
+  ([`d14944f`](https://github.com/anaticulae/viewo_api/commit/d14944f97040063e414c7e808fc15e4db6de7a1b))
+
+- **refactor**: Improve code style
+  ([`5c27512`](https://github.com/anaticulae/viewo_api/commit/5c2751240ef081be4eae6b0c8440c734ffca2e17))
+
+- **visitor**: Verify request context
+  ([`e4454b5`](https://github.com/anaticulae/viewo_api/commit/e4454b590f1754d4dd086e97386fce07f35e7f4a))
+
+
+## v0.7.4 (2021-06-09)
+
+### Features
+
+- **user**: Add method to load user list
+  ([`5a15623`](https://github.com/anaticulae/viewo_api/commit/5a15623065727d5ea5470999a38a63dbb8ee3b91))
+
+### Refactoring
+
+- **serialize**: Improve package structure
+  ([`22c7d38`](https://github.com/anaticulae/viewo_api/commit/22c7d3859883ffbf53b321bd939a0a6320c07012))
+
+### Testing
+
+- **user**: Move user data tests
+  ([`c34bbb1`](https://github.com/anaticulae/viewo_api/commit/c34bbb1c963bd38ba27d8d2f68569023f3d20a10))
+
+
+## v0.7.3 (2021-06-08)
+
+### Features
+
+- **user**: Add public password option
+  ([`1be8244`](https://github.com/anaticulae/viewo_api/commit/1be8244291dbf822027838e8d885a0f839002d85))
+
+
+## v0.7.2 (2021-06-08)
+
+### Bug Fixes
+
+- **user**: Signal correct update
+  ([`576f36e`](https://github.com/anaticulae/viewo_api/commit/576f36e56f36a970b40c7b4a23ec6eaa1a67383c))
+
+
+## v0.7.1 (2021-06-08)
+
+### Features
+
+- **user**: Add verify flag, to signal invalid user
+  ([`2da471b`](https://github.com/anaticulae/viewo_api/commit/2da471b992bf1125f3d0447f0afdc4aee266e62b))
+
+
+## v0.7.0 (2021-06-08)
+
+### Code Style
+
+- **format**: Format code
+  ([`7caff43`](https://github.com/anaticulae/viewo_api/commit/7caff432d3d961a5c6ee41fa54cd8c29533002f3))
+
+### Features
+
+- **user**: Add method to gather public user data
+  ([`e4b8468`](https://github.com/anaticulae/viewo_api/commit/e4b8468af519e09d8a10270c5800b4c1245d931d))
+
+
+## v0.6.1 (2021-06-08)
+
+### Features
+
+- **password**: Restructure password code
+  ([`121412b`](https://github.com/anaticulae/viewo_api/commit/121412bb36613b06d2a950c45f2c4ed670fdfa7e))
+
+
+## v0.6.0 (2021-06-08)
+
+### Documentation
+
+- **fix**: Fix interface documentation
+  ([`5746ef0`](https://github.com/anaticulae/viewo_api/commit/5746ef0e2d40f82570100e08db8618715741330c))
+
+### Features
+
+- **state**: Add option login/logout
+  ([`bbb37c3`](https://github.com/anaticulae/viewo_api/commit/bbb37c3d88b7cba68014ea9d32e1511a83b8be4c))
+
+
+## v0.5.1 (2021-06-07)
+
+### Bug Fixes
+
+- **user**: Fix user creation
+  ([`2d1b061`](https://github.com/anaticulae/viewo_api/commit/2d1b061e9599c04d06494a0ad6e4e033a58097a8))
+
+
+## v0.5.0 (2021-06-07)
+
+### Chores
+
+- **requirements**: Add flask login
+  ([`6c32a3b`](https://github.com/anaticulae/viewo_api/commit/6c32a3bbf037b10b52cda07c22cea4355ed0dfb2))
+
+### Features
+
+- **user**: Add flask login user profile
+  ([`e564345`](https://github.com/anaticulae/viewo_api/commit/e564345cdcbaa138c397a1bb802a66083a299549))
+
+
+## v0.4.0 (2021-06-07)
+
+### Chores
+
+- **requirements**: Add missing link package
+  ([`08937b2`](https://github.com/anaticulae/viewo_api/commit/08937b2f0c44eb0e55bbe7484470e5c178d5feed))
+
+### Features
+
+- **update**: Add method to update user
+  ([`e5efaad`](https://github.com/anaticulae/viewo_api/commit/e5efaad3be1703f256704478f894350d6e51f243))
+
+
+## v0.3.0 (2021-06-07)
+
+### Features
+
+- **user**: Add method to create user
+  ([`3f884a5`](https://github.com/anaticulae/viewo_api/commit/3f884a5ec4c511d319664a8358d012a8cf9eed50))
+
+
+## v0.2.0 (2021-06-07)
+
+### Chores
+
+- **requirements**: Add configo package
+  ([`10ea678`](https://github.com/anaticulae/viewo_api/commit/10ea678dbd65802558bed2c76d646a3b528ad346))
+
+### Features
+
+- **config**: Add config module
+  ([`72929e6`](https://github.com/anaticulae/viewo_api/commit/72929e6d36c646be9b0015fe21134159e5cb12ac))
+
+- **config**: Add user path
+  ([`5af32c4`](https://github.com/anaticulae/viewo_api/commit/5af32c487c44f29afa8ab9cfc71b28d13e561f8d))
+
+- **user**: Add user data structures
+  ([`f7aa962`](https://github.com/anaticulae/viewo_api/commit/f7aa96270b0c45b0aa72c748a4885753e1234169))
+
+- **user**: Move user code
+  ([`977a874`](https://github.com/anaticulae/viewo_api/commit/977a8748ee8e7dcf65bf77aa04f4fbbe2402fa8c))
+
+
+## v0.1.0 (2021-06-07)
+
+### Chores
+
+- **requirements**: Add flask
+  ([`b7344d6`](https://github.com/anaticulae/viewo_api/commit/b7344d65b13680c8f0e49cf9c14e68cbf8cd62cd))
+
+- **resources**: Add utila
+  ([`8001e80`](https://github.com/anaticulae/viewo_api/commit/8001e80c218f7443ac64952836868baf8979bd98))
+
+### Features
+
+- **message**: Add default http messages
+  ([`3be304c`](https://github.com/anaticulae/viewo_api/commit/3be304c1f1829400bc0b0093d691e4793d930094))
+
+
+## v0.0.0 (2021-06-07)
+
+- Initial Release
