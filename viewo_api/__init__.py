@@ -7,6 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
 
+import importlib.metadata
 import os
 
 from viewo_api.mail.send import send_mail
@@ -40,6 +41,6 @@ from viewo_api.visitor import request
 from viewo_api.visitor import user_current
 from viewo_api.visitor import user_hash
 
-__version__ = '0.11.3'
+__version__ =  importlib.metadata.version('viewo_api')
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))

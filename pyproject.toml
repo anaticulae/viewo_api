@@ -1,0 +1,89 @@
+[project]
+name = "viewo_api"
+version = "0.11.3"
+description = ""
+requires-python = ">=3.12"
+authors = [
+    { name = "Helmut Konrad Schewe", email = "helmutus@outlook.com" },
+]
+dependencies = [
+    "flask>=3.1.3,<4.0.0",
+    "Flask_Login>=0.6.2,<1.0.0",
+    "Flask-Mail>=0.9.1,<1.0.0",
+    "utilo>=2.109.0,<3.0.0",
+    "configo>=0.25.3,<1.0.0",
+    "PyYAML>=6.0.0,<7.0.0",
+]
+keywords = []
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+license = "MIT"
+license-files = [
+    "LICENSE",
+]
+
+[project.readme]
+file = "README"
+content-type = "text/markdown"
+
+[project.optional-dependencies]
+dev = [
+    "utilotest>=1.0.4,<2.0.0",
+    "pytest_localserver>=0.7.0,<2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/anaticulae/viewo_api"
+Repository = "https://github.com/anaticulae/viewo_api"
+
+[project.scripts]
+viewo_api = "viewo_api.cli:main"
+
+[build-system]
+requires = [
+    "setuptools>=82.0.1",
+    "wheel>=0.46.3",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.semantic_release]
+version_toml = [
+    "pyproject.toml:project.version",
+]
+
+[tool.semantic_release.changelog]
+mode = "init"
+output_format = "md"
+
+[tool.semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG"
+
+[tool.semantic_release.commit_parser_options]
+patch_tags = [
+    "fix",
+    "perf",
+    "build",
+    "chore",
+    "ci",
+    "docs",
+    "style",
+    "refactor",
+    "test",
+    "deps",
+]
+
+[tool.setuptools.packages.find]
+where = [
+    ".",
+]
+include = [
+    "viewo_api",
+    "viewo_api.mail",
+    "viewo_api.user",
+]
+exclude = [
+    "tests/*",
+]
