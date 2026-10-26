@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v1.0.1 (2026-10-26)
+
+### Chores
+
+- **make**: Adjust docker container upload
+  ([`506f5ee`](https://github.com/anaticulae/viewo_api/commit/506f5ee987dd50ca60a12bb415628b85a5bfa4d9))
+
+
 ## v1.0.0 (2026-10-26)
 
 ### Chores
