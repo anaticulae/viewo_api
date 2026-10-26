@@ -7,7 +7,6 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import link
 import utilo
 
 import viewo_api
@@ -26,7 +25,10 @@ def user_update(user: 'User', verify=False) -> bool:
 
 
 def user_append_document(userid: str, documentid: str) -> bool:
-    if userid == link.PUBLIC_OWNER:
+    PUBLIC_OWNER = '00000000'
+    # TODO: REPLACE LATER
+    if userid == PUBLIC_OWNER:
+        # if userid == link.PUBLIC_OWNER:
         # do not add public document to public user
         return False
     user = viewo_api.user.data.user_fromid(userid)
